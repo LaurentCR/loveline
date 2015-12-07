@@ -37,12 +37,19 @@ function createDataTable(lovelines){
 		var line = lovelines[i];
 		for(var j=0; j<line.objects.length; j++){
 			var object = line.objects[j];
-			if(object.end){
+			// if(object.end){
 				var begin = parseDate(object.begin);
-				var end = parseDate(object.end);
+				if(!object.end){
+					end = new Date(begin);
+					end = end.setDate(begin.getDate()+1);
+				}
+				else{
+
+					var end = parseDate(object.end);
+				}
 				var row = [line.name, object.type, '#40a67d', begin, end];
 				rows.push(row);
-			}
+			// }
 		}
 	}
 
