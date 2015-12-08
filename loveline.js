@@ -1,4 +1,4 @@
-
+﻿
 var categories = {single: new Category("Single",'#a23c7a'),
                   fz: new Category("Friendzone",'#40a67d'),
                   pq: new Category(2, "Plan cul",'#5581b4')}
@@ -39,24 +39,58 @@ function createDataTable(lovelines){
 		var line = lovelines[i];
 		for(var j=0; j<line.objects.length; j++){
 			var object = line.objects[j];
-			var color;
+			//var color;
+			var label = labelRow(object.type);
 			// if(object.end){
 				var begin = parseDate(object.begin);
 				if(!object.end){
 					end = new Date(begin);
 					end = end.setDate(begin.getDate()+1);
-					color = EVENT_COLOR;
+					//color = EVENT_COLOR;
 				}
 				else{
 					var end = parseDate(object.end);
-					color = '#40a67d'
-				}
-				var row = [line.name, object.type, color, begin, end];
+					//color = colorRow(object.type);
+					}
+				var row = [line.name, label.name, label.color, begin, end];
+							console.log(row);
+
 				rows.push(row);
 			// }
 		}
 	}
 
+/*
+ * Determine color of a state based on his type
+ * Color palette : http://www.colourlovers.com/palette/985632/Invisible_Look!
+ */
+function labelRow(rowType) {
+	var color = "#E5D599";
+	var name;
+	if (rowType == "PQ") {
+		name = "Plan cul";
+		color = "#029DAF";
+	}
+	else if (rowType == "FZ") {
+		name = "Friendzone";
+		color = "#FFC219";
+	}
+	else if (rowType == "RR") {
+		name = "Relation sentimentale";
+		color = "#E32551";
+	}
+	else if (rowType == "Crush") {
+		name = "Béguin";
+	}
+	else if (rowType == "Rake") {
+		name = "Râteau";
+	}
+	else if (rowType == "ONS") {
+		name = "Coup d'un soir";
+	}
+			
+	return {name:name, color:color};
+}
   
   // rows.push(['Foo', categories.single.label, categories.single.color, new Date(2010, 7, 1), new Date(2014, 7, 5)]);
   // rows.push(['Foo', 'Qud', '#40a67d', new Date(2014, 7, 6), new Date(2015, 7, 8)]);
