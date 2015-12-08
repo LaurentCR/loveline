@@ -105,7 +105,10 @@ function drawChart(dataTable) {
   var container = document.getElementById('loveline');
   var chart = new google.visualization.Timeline(container);
   google.visualization.events.addListener(chart, 'ready', drawEvents);
-  chart.draw(dataTable);
+  options = {
+	timeline: {showBarLabels:false}
+	};
+  chart.draw(dataTable, options);
 
 }
 
