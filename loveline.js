@@ -8,6 +8,8 @@ function Category(label, color){
   var color = color;
 }
 
+var EVENT_COLOR = '#666666';
+
 
 function createLoveline(){
 	$.getJSON("data.json", function(data){
@@ -26,7 +28,7 @@ function createLoveline(){
 
 function parseDate(dateString){
 	var dateTable = dateString.split('-');
-	return new Date(dateTable[0], dateTable[1], dateTable[2]);
+	return new Date(dateTable[0], dateTable[1]-1, dateTable[2]);
 }
 
 function createDataTable(lovelines){
@@ -37,17 +39,19 @@ function createDataTable(lovelines){
 		var line = lovelines[i];
 		for(var j=0; j<line.objects.length; j++){
 			var object = line.objects[j];
+			var color;
 			// if(object.end){
 				var begin = parseDate(object.begin);
 				if(!object.end){
 					end = new Date(begin);
 					end = end.setDate(begin.getDate()+1);
+					color = EVENT_COLOR;
 				}
 				else{
-
 					var end = parseDate(object.end);
+					color = '#40a67d'
 				}
-				var row = [line.name, object.type, '#40a67d', begin, end];
+				var row = [line.name, object.type, color, begin, end];
 				rows.push(row);
 			// }
 		}
@@ -66,8 +70,25 @@ function drawChart(dataTable) {
 
   var container = document.getElementById('loveline');
   var chart = new google.visualization.Timeline(container);
-
-  var dataTable = dataTable;
-
+  google.visualization.events.addListener(chart, 'ready', drawEvents);
   chart.draw(dataTable);
+
 }
+
+function drawEvents(){
+	console.log("events")
+	$("rect[fill='" + EVENT_COLOR + "']").attr("class", "love_event");
+	var x = $(".love_event").first().attr("x");
+	var y = $(".love_event").first().attr("y");
+	$(".overlay").css("top", y);
+	$(".overlay").css("left", x);
+}
+
+function placeMarker(chart, dataTable) {
+	// console.log(Object.getOwnPropertyNames(chart));
+        var cli = chart.getChartLayoutInterface();
+        var chartArea = cli.getChartAreaBoundingBox();
+        // "Zombies" is element #5.
+        document.querySelector('.overlay-marker').style.top = Math.floor(cli.getYLocation(dataTable.getValue(5, 1))) - 50 + "px";
+        document.querySelector('.overlay-marker').style.left = Math.floor(cli.getXLocation(5)) - 10 + "px";
+      };
