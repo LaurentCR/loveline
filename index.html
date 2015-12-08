@@ -6,16 +6,33 @@
 <script type="text/javascript" src="loveline.js"></script>
 <script type="text/javascript">
 
-google.load('visualization', '1', {packages:['timeline'], callback: createLoveline});
+google.load('visualization', '1', {packages:['corechart'], callback: createLoveline});
 
 
 
 </script>
+
+<style> 
+    <!--
+      .love_event {
+            background-color: "#ffffff"
+        }
+       .overlay {
+            position: absolute;
+            
+        }
+    -->
+   </style>
 
   </head>
 
   <body>
     <!--Div that will hold the pie chart-->
 		<div id="loveline" style="height: 200px;"></div>
+
+    <div class="overlay">
+    <img src="rake.png" height="50">
+ </div>
+
   </body>
 </html>
