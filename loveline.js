@@ -8,7 +8,7 @@ function Category(label, color){
   var color = color;
 }
 
-var EVENT_COLOR = '#666666';
+var EVENT_COLOR = "#029DAF";
 
 
 function createLoveline(){
@@ -48,6 +48,9 @@ function createDataTable(lovelines){
 					end = end.setDate(begin.getDate()+1);
 					//color = EVENT_COLOR;
 				}
+				else if (object.end == 0) {
+					end = new Date();
+				}
 				else{
 					var end = parseDate(object.end);
 					//color = colorRow(object.type);
@@ -65,11 +68,11 @@ function createDataTable(lovelines){
  * Color palette : http://www.colourlovers.com/palette/985632/Invisible_Look!
  */
 function labelRow(rowType) {
-	var color = "#E5D599";
-	var name;
+	var color = "#029DAF";
+	var name; 
 	if (rowType == "PQ") {
 		name = "Plan cul";
-		color = "#029DAF";
+		color = "#F07C19";
 	}
 	else if (rowType == "FZ") {
 		name = "Friendzone";
