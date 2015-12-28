@@ -55,6 +55,8 @@ function createDataTable(lovelines){
 					var end = parseDate(object.end);
 					//color = colorRow(object.type);
 					}
+				if (object.description) {
+				}
 				var row = [line.name, label.name, label.color, begin, end];
 							console.log(row);
 
@@ -68,8 +70,7 @@ function createDataTable(lovelines){
  * Color palette : http://www.colourlovers.com/palette/985632/Invisible_Look!
  */
 function labelRow(rowType) {
-	var color = "#029DAF";
-	var name; 
+	var color, name; 
 	if (rowType == "PQ") {
 		name = "Plan cul";
 		color = "#F07C19";
@@ -84,12 +85,15 @@ function labelRow(rowType) {
 	}
 	else if (rowType == "Crush") {
 		name = "Béguin";
+		color = "#029DAF";
 	}
 	else if (rowType == "Rake") {
 		name = "Râteau";
+		color = "#000000";
 	}
 	else if (rowType == "ONS") {
 		name = "Coup d'un soir";
+		color = "#E5D599";
 	}
 			
 	return {name:name, color:color};
