@@ -139,5 +139,91 @@
 			"begin": "2015-11-07",
 			"end": "0"
 		}]
+	},{
+		"name": "Kaz",
+		"objects": [{
+			"type": "Crush",
+			"description": "Nanou",
+			"begin": "2006-04-01",
+			"end":"2006-07-01"
+			}, {
+			"type": "FZ",
+			"description": "Nanou",
+			"begin": "2006-07-01"
+			},
+			{
+			"type": "FZ",
+			"description": "Lucile",
+			"begin": "2007-02-05"
+			},
+			{
+			"type": "Rake",
+			"description": "Marie",
+			"begin": "2008-04-01"
+			},
+			{
+			"type": "RR",
+			"description": "Aurélie",
+			"begin": "2008-05-20",
+			"end": "2010-05-20"
+			},
+			{
+			"type": "Crush",
+			"description": "Anna",
+			"begin": "2010-12-01"
+			},
+			{
+			"type": "Crush",
+			"description": "Pauline",
+			"begin": "2011-03-01"
+			},
+			{
+			"type": "Crush",
+			"description": "Kanako",
+			"begin": "2012-03-01"
+			},
+			{
+			"type": "ONS",
+			"description": "Alice",
+			"begin": "2012-04-25"
+			},
+			{
+			"type": "RR",
+			"description": "Mari",
+			"begin": "2012-06-01",
+			"end": "2012-07-31"
+			},
+			{
+			"type": "ONS",
+			"description": "Dana",
+			"begin": "2012-08-11"
+			},
+			{
+			"type": "Crush",
+			"description": "Dana",
+			"begin": "2012-08-11",
+			"end": "2014-04-15"
+			},
+			{
+			"type": "Crush",
+			"description": "Lucie",
+			"begin": "2013-12-31"
+			},
+			{
+			"type": "ONS",
+			"description": "Victoria",
+			"begin": "2014-08-10"
+			},
+			{
+			"type": "RR",
+			"description": "Edith",
+			"begin": "2014-05-05"
+			},
+			{
+			"type": "Crush",
+			"description": "Blanca",
+			"begin": "2015-10-04"
+			}
+			]
 	}]
 }
