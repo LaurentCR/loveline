@@ -37,31 +37,34 @@ function createDataTable(lovelines){
 
 	for(var i=0; i<lovelines.length; i++){
 		var line = lovelines[i];
-		for(var j=0; j<line.objects.length; j++){
-			var object = line.objects[j];
-			//var color;
-			var label = labelRow(object.type);
-			// if(object.end){
-				var begin = parseDate(object.begin);
-				if(!object.end){
-					end = new Date(begin);
-					end = end.setDate(begin.getDate()+1);
-					//color = EVENT_COLOR;
-				}
-				else if (object.end == 0) {
-					end = new Date();
-				}
-				else{
-					var end = parseDate(object.end);
-					//color = colorRow(object.type);
+		console.log(lovelines[i].display);
+		if (line.display) {
+			for(var j=0; j<line.objects.length; j++){
+				var object = line.objects[j];
+				//var color;
+				var label = labelRow(object.type);
+				// if(object.end){
+					var begin = parseDate(object.begin);
+					if(!object.end){
+						end = new Date(begin);
+						end = end.setDate(begin.getDate()+1);
+						//color = EVENT_COLOR;
 					}
-				if (object.description) {
-				}
-				var row = [line.name, label.name, label.color, begin, end];
-							console.log(row);
+					else if (object.end == 0) {
+						end = new Date();
+					}
+					else{
+						var end = parseDate(object.end);
+						//color = colorRow(object.type);
+						}
+					if (object.description) {
+					}
+					var row = [line.name, label.name, label.color, begin, end];
+								console.log(row);
 
-				rows.push(row);
-			// }
+					rows.push(row);
+				// }
+			}
 		}
 	}
 

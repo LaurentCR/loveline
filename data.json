@@ -1,6 +1,7 @@
 {
 	"timelines": [{
 		"name": "Laurent",
+		"display": true,
 		"objects": [{
 			"type": "Crush",
 			"description": "Sabrina",
@@ -72,11 +73,12 @@
 		}, {
 			"type": "RR",
 			"description": "Carmen",
-			"begin": "2016-02-12",
+			"begin": "2016-02-19",
 			"end": "0"
 		}]
 	}, {
 		"name": "Pej",
+		"display": true,
 		"objects": [{
 			"type": "RR",
 			"begin": "2009-04-01",
@@ -124,6 +126,7 @@
 		}]
 	}, {
 		"name": "Natacha",
+		"display": true,
 		"objects": [{
 			"type": "FZ",
 			"description": "Kazi",
@@ -168,6 +171,7 @@
 		}]
 	},{
 		"name": "Kaz",
+		"display": true,
 		"objects": [{
 			"type": "Crush",
 			"description": "Nanou",
