@@ -1,7 +1,7 @@
 # Loveline
 A personal timeline base on relationship states and events
 
-Copyright (C) 2014-2024: Laurent Crevon <razandfall@gmail.com>
+Copyright (C) 2014-2024: Laurent C. <razandfall@gmail.com>
 
 loveline is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
